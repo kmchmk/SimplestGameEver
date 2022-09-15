@@ -18,10 +18,11 @@ export class ExchangeRates implements OnInit {
       .watchQuery({
         query: gql`
           {
-            player {
-              username
-            }
+          player (limit: 3, order_by: {score: desc}) {
+            username
+            score
           }
+        }
         `,
       })
       .valueChanges.subscribe((result: any) => {
