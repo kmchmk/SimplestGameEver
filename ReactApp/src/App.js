@@ -1,18 +1,23 @@
 import React, { useState } from 'react';
-import { ApolloClient, ApolloProvider, InMemoryCache, HttpLink } from '@apollo/client';
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+import { WebSocketLink } from "@apollo/client/link/ws";
+
 import "./App.css";
 import HighScores from './components/HighScores/HighScores';
-import MyScore  from './components/MyScore/MyScore';
+import MyScore from './components/MyScore/MyScore';
 import Button from './components/Button/Button';
-
-const uri = 'https://simplest-game-ever.hasura.app/v1/graphql'; // <-- add the URL of the GraphQL server here
 
 const createApolloClient = () => {
   return new ApolloClient({
-    link: new HttpLink({
-      uri: uri,
-      headers: {
-        'x-hasura-admin-secret': '<ToDo - add the correct password here>'
+    link: new WebSocketLink({
+      uri: 'wss://simplest-game-ever.hasura.app/v1/graphql',
+      options: {
+        reconnect: true,
+        connectionParams: {
+          headers: {
+            'x-hasura-admin-secret': '<ToDo - add the correct password here>'
+          }
+        }
       }
     }),
     cache: new InMemoryCache(),
@@ -27,9 +32,8 @@ const App = () => {
         <h1>Simplest Game Ever</h1>
         <HighScores />
         <Button />
+        <MyScore />
       </div>
-      
-      <MyScore/>
     </ApolloProvider>
   );
 };
