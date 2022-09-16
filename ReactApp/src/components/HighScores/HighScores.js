@@ -1,8 +1,8 @@
-import { gql, useQuery } from '@apollo/client';
+import { gql, useSubscription } from '@apollo/client';
 import React from 'react';
 
 const GET_HIGHSCORES = gql`
-    query MyQuery {
+    subscription MyQuery {
       player(limit: 10, order_by: {score: desc}) {
         username
         score
@@ -11,7 +11,7 @@ const GET_HIGHSCORES = gql`
 `;
 
 const HighScores = () => {
-  const { loading, error, data } = useQuery(GET_HIGHSCORES);
+  const { loading, error, data } = useSubscription(GET_HIGHSCORES);
 
   if (loading) {
     return <div>Loading...</div>;
