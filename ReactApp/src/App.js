@@ -3,6 +3,7 @@ import { ApolloClient, ApolloProvider, InMemoryCache, HttpLink } from '@apollo/c
 import "./App.css";
 import HighScores from './components/HighScores/HighScores';
 import MyScore  from './components/MyScore/MyScore';
+import Button from './components/Button/Button';
 
 const uri = 'https://simplest-game-ever.hasura.app/v1/graphql'; // <-- add the URL of the GraphQL server here
 
@@ -20,20 +21,14 @@ const createApolloClient = () => {
 
 const App = () => {
   const [client] = useState(createApolloClient());
-  const [count, setCount] = React.useState(false);
-  const handleClick = () => {
-    setCount(count + 1);
-  };
   return (
     <ApolloProvider client={client}>
       <div className="App">
-        <h1>Hello World</h1>
+        <h1>Simplest Game Ever</h1>
         <HighScores />
+        <Button />
       </div>
-      <div>
-      <button type="button" onClick={handleClick}>Click Me</button>
-      </div>
-      {count}
+      
       <MyScore/>
     </ApolloProvider>
   );
