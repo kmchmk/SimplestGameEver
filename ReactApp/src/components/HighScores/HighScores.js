@@ -3,7 +3,7 @@ import React from 'react';
 
 const GET_HIGHSCORES = gql`
     query MyQuery {
-      player(limit: 3, order_by: {score: desc}) {
+      player(limit: 10, order_by: {score: desc}) {
         username
         score
       }
@@ -24,7 +24,7 @@ const HighScores = () => {
   if (data) {
     return data.player.map((p) => {
       return (
-        <div>
+        <div key={p.username}>
           <p>{p.username}-{p.score}</p>
         </div>
       )
