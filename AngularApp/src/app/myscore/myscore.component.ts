@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
 
 @Component({
-  selector: 'high-scores',
-  templateUrl: './high-scores.component.html',
-  styleUrls: ['./high-scores.component.css']
+  selector: 'app-myscore',
+  templateUrl: './myscore.component.html',
+  styleUrls: ['./myscore.component.css']
 })
-export class ExchangeRates implements OnInit {
+export class MyscoreComponent implements OnInit {
+
   player: any = [];
   loading = true;
   error: any;
@@ -17,8 +18,8 @@ export class ExchangeRates implements OnInit {
     this.apollo
       .watchQuery({
         query: gql`
-          {
-          player (limit: 10, order_by: {score: desc}) {
+        {
+          player_by_pk(username: "prmadu") {
             username
             score
           }
@@ -26,9 +27,12 @@ export class ExchangeRates implements OnInit {
         `,
       })
       .valueChanges.subscribe((result: any) => {
-        this.player = result?.data?.player;
+        console.log("asdf", result)
+        this.player = result?.data?.player_by_pk;
         this.loading = result.loading;
         this.error = result.error;
       });
   }
+
+
 }

@@ -1,0 +1,10 @@
+<h1>My score</h1>
+<div *ngIf="loading">
+    Loading...
+</div>
+<div *ngIf="error">
+    Error :(
+</div>
+<div>
+    <p>{{player.username}} - {{player.score}}</p>
+</div>

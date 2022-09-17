@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ExchangeRates } from './high-scores/high-scores.component';
+import { MyscoreComponent } from './myscore/myscore.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ExchangeRates
+    ExchangeRates,
+    MyscoreComponent
   ],
   imports: [
     BrowserModule,
