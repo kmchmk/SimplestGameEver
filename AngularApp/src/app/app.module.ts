@@ -4,18 +4,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
-import { ExchangeRates } from './high-scores/high-scores.component';
+import { HighScores } from './high-scores/high-scores.component';
 import { MyscoreComponent } from './myscore/myscore.component';
 import { ButtonComponent } from './button/button.component';
-import { ButtonFunctionComponent } from './button-function/button-function.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ExchangeRates,
-    MyscoreComponent,
+    HighScores,
     ButtonComponent,
-    ButtonFunctionComponent
+    MyscoreComponent
   ],
   imports: [
     BrowserModule,

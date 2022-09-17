@@ -6,7 +6,7 @@ import { Apollo, gql } from 'apollo-angular';
   templateUrl: './high-scores.component.html',
   styleUrls: ['./high-scores.component.css']
 })
-export class ExchangeRates implements OnInit {
+export class HighScores implements OnInit {
   player: any = [];
   loading = true;
   error: any;
