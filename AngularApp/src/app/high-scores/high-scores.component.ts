@@ -1,6 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
 
+const High_SCORE = gql`
+subscription HighSubscription {
+  player(order_by: {score: desc}, limit: 3) {
+    username
+    score
+  }
+}`
+
+
+
 @Component({
   selector: 'high-scores',
   templateUrl: './high-scores.component.html',
@@ -15,20 +25,13 @@ export class HighScores implements OnInit {
 
   ngOnInit(): void {
     this.apollo
-      .watchQuery({
-        query: gql`
-          {
-          player (limit: 10, order_by: {score: desc}) {
-            username
-            score
-          }
-        }
-        `,
-      })
-      .valueChanges.subscribe((result: any) => {
+      .subscribe({
+        query: High_SCORE,
+      }).subscribe((result: any) =>{
         this.player = result?.data?.player;
         this.loading = result.loading;
         this.error = result.error;
       });
+
   }
 }

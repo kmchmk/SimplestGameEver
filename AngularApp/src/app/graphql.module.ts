@@ -4,6 +4,7 @@ import { ApolloClientOptions, InMemoryCache } from '@apollo/client/core';
 import { HttpLink } from 'apollo-angular/http';
 import { HttpHeaders } from '@angular/common/http';
 import { WebSocketLink } from '@apollo/client/link/ws';
+import { environment } from '../environments/environment';
 
 export function createApolloClient(): ApolloClientOptions<any> {
   return {
@@ -13,7 +14,7 @@ export function createApolloClient(): ApolloClientOptions<any> {
         reconnect: true,
         connectionParams: {
           headers: {
-            'x-hasura-admin-secret': '<ToDo - add the correct password here>'
+            'x-hasura-admin-secret': environment.X_hasura_admin_secret
           }
         }
       }
