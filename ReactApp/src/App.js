@@ -15,7 +15,7 @@ const createApolloClient = () => {
         reconnect: true,
         connectionParams: {
           headers: {
-            'x-hasura-admin-secret': '<ToDo - add the correct password here>'
+            'x-hasura-admin-secret': process.env.REACT_APP_X_HASURA_ADMIN_SECRET
           }
         }
       }
