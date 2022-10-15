@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "bdef8559de7dd0718fdf",
+    "revision": "69fd0c78fe2a5c51973e",
     "url": "/SimplestGameEver/static/css/main.4b6ddec7.chunk.css"
   },
   {
-    "revision": "bdef8559de7dd0718fdf",
-    "url": "/SimplestGameEver/static/js/main.d4d54f1e.chunk.js"
+    "revision": "69fd0c78fe2a5c51973e",
+    "url": "/SimplestGameEver/static/js/main.a9670ceb.chunk.js"
   },
   {
     "revision": "5d6e98bddc9a9ed3e3f1",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/SimplestGameEver/static/js/2.9f8c4694.chunk.js"
   },
   {
-    "revision": "a35a35f7ae13018ab15aedb0ce70a652",
+    "revision": "a1879903713446060cec65463fed0320",
     "url": "/SimplestGameEver/index.html"
   }
 ];
