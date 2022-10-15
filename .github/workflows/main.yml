@@ -1,0 +1,26 @@
+name: React Build CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ReactApp
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 14
+      - run: npm install
+      - env:
+          REACT_APP_X_HASURA_ADMIN_SECRET: ${{secrets.REACT_APP_X_HASURA_ADMIN_SECRET}}
+        run: npm run build 
+      - uses: JamesIves/github-pages-deploy-action@v4
+        with:
+            folder: ReactApp/build
