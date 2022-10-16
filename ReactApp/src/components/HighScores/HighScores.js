@@ -14,7 +14,7 @@ const HighScores = () => {
   const { loading, error, data } = useSubscription(GET_HIGHSCORES);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div>Loading top 10 scores...</div>;
   }
   if (error) {
     console.error(error);
@@ -26,7 +26,7 @@ const HighScores = () => {
       return (
         <div key={p.name}>
           <p>
-            {p.name}-{p.score}
+            {p.name} - {p.score}
           </p>
         </div>
       );

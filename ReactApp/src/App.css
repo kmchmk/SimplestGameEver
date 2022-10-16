@@ -8,16 +8,6 @@ article {
   margin: 1rem;
 }
 
-img {
-  width: 100px;
-  border: 0.2rem solid #000;
-  border-radius: 50%;
-  margin: 1rem;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-}
-
 .column {
   display: flex;
   flex-direction: column;

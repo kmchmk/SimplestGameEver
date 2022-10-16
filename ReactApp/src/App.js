@@ -1,14 +1,14 @@
-import React, { useState } from "react";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import { WebSocketLink } from "@apollo/client/link/ws";
+import React, { useState } from "react";
 
+import { useAuth0 } from "@auth0/auth0-react";
 import "./App.css";
 import HighScores from "./components/HighScores/HighScores";
-import MyScore from "./components/MyScore/MyScore";
-import Button from "./components/Button/Button";
 import LoginButton from "./components/LoginButton/LoginButton";
 import LogoutButton from "./components/LogoutButton/LogoutButton";
-import Profile from "./components/profile/profile";
+import MyScore from "./components/MyScore/MyScore";
+import Button from "./components/PlayButton/PlayButton";
 
 const createApolloClient = () => {
   return new ApolloClient({
@@ -28,6 +28,28 @@ const createApolloClient = () => {
   });
 };
 
+
+function getMyProfile() {
+  const { isLoading, isAuthenticated } = useAuth0();
+  if (isLoading) {
+    return (
+      <div>Loading my profile...</div>
+    )
+  }
+  if (isAuthenticated) {
+    return (
+      <div>
+        <Button />
+        <MyScore />
+        <LogoutButton />
+      </div>
+    )
+  } else {
+    return (<div><LoginButton /></div>)
+  }
+}
+
+
 const App = () => {
   const [client] = useState(createApolloClient());
   return (
@@ -35,15 +57,8 @@ const App = () => {
       <div className="App">
         <h1>Simplest Game Ever</h1>
         <HighScores />
-        <Button />
-        <MyScore />
-      </div>
-      <div className="App">
-        <h1>Authentication Section</h1>
-        <LoginButton />
-        <LogoutButton />
-        <Profile />
-      </div>
+        {getMyProfile()}
+      </div >
     </ApolloProvider>
   );
 };
