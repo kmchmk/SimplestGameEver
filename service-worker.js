@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/SimplestGameEver/precache-manifest.72dab558be8c1ad7d06553c65b996fa8.js"
+  "/SimplestGameEver/precache-manifest.ce385d83373d2d13f10752ba7dda8370.js"
 );
 
 workbox.clientsClaim();
