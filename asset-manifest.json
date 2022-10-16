@@ -1,13 +1,13 @@
 {
-  "main.css": "/SimplestGameEver/static/css/main.4b6ddec7.chunk.css",
-  "main.js": "/SimplestGameEver/static/js/main.f9ad7f17.chunk.js",
-  "main.js.map": "/SimplestGameEver/static/js/main.f9ad7f17.chunk.js.map",
+  "main.css": "/SimplestGameEver/static/css/main.04a57722.chunk.css",
+  "main.js": "/SimplestGameEver/static/js/main.3e18e9b7.chunk.js",
+  "main.js.map": "/SimplestGameEver/static/js/main.3e18e9b7.chunk.js.map",
   "runtime~main.js": "/SimplestGameEver/static/js/runtime~main.267a2ab4.js",
   "runtime~main.js.map": "/SimplestGameEver/static/js/runtime~main.267a2ab4.js.map",
-  "static/js/2.9f8c4694.chunk.js": "/SimplestGameEver/static/js/2.9f8c4694.chunk.js",
-  "static/js/2.9f8c4694.chunk.js.map": "/SimplestGameEver/static/js/2.9f8c4694.chunk.js.map",
+  "static/js/2.3e22f29f.chunk.js": "/SimplestGameEver/static/js/2.3e22f29f.chunk.js",
+  "static/js/2.3e22f29f.chunk.js.map": "/SimplestGameEver/static/js/2.3e22f29f.chunk.js.map",
   "index.html": "/SimplestGameEver/index.html",
-  "precache-manifest.08074579287687409124b2a68494e5c5.js": "/SimplestGameEver/precache-manifest.08074579287687409124b2a68494e5c5.js",
+  "precache-manifest.1bc07e5c9c915912f13f0edf294902c6.js": "/SimplestGameEver/precache-manifest.1bc07e5c9c915912f13f0edf294902c6.js",
   "service-worker.js": "/SimplestGameEver/service-worker.js",
-  "static/css/main.4b6ddec7.chunk.css.map": "/SimplestGameEver/static/css/main.4b6ddec7.chunk.css.map"
+  "static/css/main.04a57722.chunk.css.map": "/SimplestGameEver/static/css/main.04a57722.chunk.css.map"
 }
