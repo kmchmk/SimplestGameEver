@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.6.9",
+    "@auth0/auth0-react": "^1.12.0",
     "graphql": "^16.6.0",
     "graphql-ws": "^5.11.1",
     "react": "^18.2.0",
