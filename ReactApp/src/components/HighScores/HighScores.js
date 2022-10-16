@@ -1,13 +1,13 @@
-import { gql, useSubscription } from '@apollo/client';
-import React from 'react';
+import { gql, useSubscription } from "@apollo/client";
+import React from "react";
 
 const GET_HIGHSCORES = gql`
-    subscription MyQuery {
-      player(limit: 10, order_by: {score: desc}) {
-        username
-        score
-      }
+  subscription MyQuery {
+    player(limit: 10, order_by: { score: desc }) {
+      name
+      score
     }
+  }
 `;
 
 const HighScores = () => {
@@ -24,11 +24,13 @@ const HighScores = () => {
   if (data) {
     return data.player.map((p) => {
       return (
-        <div key={p.username}>
-          <p>{p.username}-{p.score}</p>
+        <div key={p.name}>
+          <p>
+            {p.name}-{p.score}
+          </p>
         </div>
-      )
-    })
+      );
+    });
   }
 };
 
